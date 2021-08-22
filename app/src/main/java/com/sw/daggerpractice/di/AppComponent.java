@@ -2,20 +2,22 @@ package com.sw.daggerpractice.di;
 
 import android.app.Application;
 
-import com.sw.daggerpractice.BaseApp;
+import com.sw.daggerpractice.BaseApplication;
+
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-import dagger.Module;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
+@Singleton
 @Component(modules = {
         AndroidSupportInjectionModule.class,
-        ActivityBuildersModule.class
+        ActivityBuildersModule.class,
+        AppModule.class,
 })
-public interface AppComponent extends AndroidInjector<BaseApp> {
-
+public interface AppComponent extends AndroidInjector<BaseApplication> {
 
     @Component.Builder
     interface Builder {
