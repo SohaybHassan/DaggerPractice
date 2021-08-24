@@ -19,6 +19,7 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
+    @Singleton
 
     @Provides
     static RequestOptions provideRequestOptions() {
@@ -26,14 +27,16 @@ public class AppModule {
                 .error(R.drawable.white_background);
     }
 
+    @Singleton
     @Provides
-    static RequestManager provideGlideInstance(Application application,RequestOptions requestOptions){
-         return Glide.with(application).applyDefaultRequestOptions(requestOptions);
+    static RequestManager provideGlideInstance(Application application, RequestOptions requestOptions) {
+        return Glide.with(application).applyDefaultRequestOptions(requestOptions);
 
     }
 
+    @Singleton
     @Provides
-    static Drawable provideAppDrawable(Application application){
-        return ContextCompat.getDrawable(application,R.drawable.logo);
+    static Drawable provideAppDrawable(Application application) {
+        return ContextCompat.getDrawable(application, R.drawable.logo);
     }
 }
