@@ -36,8 +36,8 @@ public class AuthActivity extends DaggerAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-     //   viewModel = new ViewModelProvider(this,providerFactory).get(AuthViewModel.class);
-        viewModel = ViewModelProviders.of(this,providerFactory).get(AuthViewModel.class);
+        viewModel = new ViewModelProvider(this,providerFactory).get(AuthViewModel.class);
+       // viewModel = ViewModelProviders.of(this,providerFactory).get(AuthViewModel.class);
 
         setLogo();
     }
