@@ -59,7 +59,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     }
 
     private void subscribeObserver() {
-        viewModel.observUser().observe(this, new Observer<AuthResource<User>>() {
+        viewModel.observAuthState().observe(this, new Observer<AuthResource<User>>() {
             @Override
             public void onChanged(AuthResource<User> userAuthResource) {
                 if (userAuthResource != null) {
