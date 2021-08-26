@@ -1,6 +1,7 @@
 package com.sw.daggerpractice.ui.auth;
 
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
@@ -19,6 +20,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.bumptech.glide.RequestManager;
 import com.sw.daggerpractice.R;
 import com.sw.daggerpractice.models.User;
+import com.sw.daggerpractice.ui.main.MainActivity;
 import com.sw.daggerpractice.viewmodel.ViewModelProviderFactory;
 
 import javax.inject.Inject;
@@ -70,11 +72,12 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                         case AUTHENTICATED:
                             showProgresBar(false);
                             Log.d(TAG, "onChanged: AUTHENTICATED :  " + userAuthResource.data.getEmail());
+                            loginٍSuccess();
                             break;
                         case ERROR:
                             showProgresBar(false);
                             Toast.makeText(AuthActivity.this, userAuthResource.message
-                                    +"\n did you enter user id betwen 1 and 10 ", Toast.LENGTH_SHORT).show();
+                                    + "\n did you enter user id betwen 1 and 10 ", Toast.LENGTH_SHORT).show();
                             break;
                         case NOT_AUTHENTICATED:
                             showProgresBar(false);
@@ -83,6 +86,13 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                 }
             }
         });
+    }
+
+
+    private void loginٍSuccess() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showProgresBar(boolean isVisible) {
