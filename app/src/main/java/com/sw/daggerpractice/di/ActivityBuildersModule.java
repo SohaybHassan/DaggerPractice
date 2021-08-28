@@ -3,6 +3,7 @@ package com.sw.daggerpractice.di;
 import com.sw.daggerpractice.di.auth.AuthModule;
 import com.sw.daggerpractice.di.auth.AuthViewModelModule;
 import com.sw.daggerpractice.di.main.MainFragmentBuildersModule;
+import com.sw.daggerpractice.di.main.MainViewModelModule;
 import com.sw.daggerpractice.ui.auth.AuthActivity;
 import com.sw.daggerpractice.ui.main.MainActivity;
 
@@ -17,7 +18,7 @@ public abstract class ActivityBuildersModule {
     abstract AuthActivity ContributeAuthActivity();
 
     @ContributesAndroidInjector(
-            modules = {MainFragmentBuildersModule.class}
+            modules = {MainFragmentBuildersModule.class, MainViewModelModule.class}
     )
     abstract MainActivity ContributeMainActivity();
 }
