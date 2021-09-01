@@ -19,9 +19,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toast.makeText(MainActivity.this, "MainActivity", Toast.LENGTH_SHORT).show();
-
         testProfileFragment();
     }
 
@@ -31,14 +28,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.logout_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.logout:
                 sessionManger.logOut();
