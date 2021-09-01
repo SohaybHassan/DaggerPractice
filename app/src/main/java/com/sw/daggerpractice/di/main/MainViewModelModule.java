@@ -3,6 +3,7 @@ package com.sw.daggerpractice.di.main;
 import androidx.lifecycle.ViewModel;
 
 import com.sw.daggerpractice.di.ViewModelKey;
+import com.sw.daggerpractice.ui.main.post.PostViewMolde;
 import com.sw.daggerpractice.ui.main.profile.ProfileViewModel;
 
 import dagger.Binds;
@@ -17,4 +18,9 @@ public abstract class MainViewModelModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel.class)
     public abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PostViewMolde.class)
+    public abstract ViewModel bindPostViewModel(PostViewMolde viewModel);
 }
