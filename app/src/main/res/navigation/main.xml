@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@+id/profileScreen"
+    >
+
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.sw.daggerpractice.ui.main.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/postsScreen"
+        android:name="com.sw.daggerpractice.ui.main.post.PostFragment"
+        android:label="@string/post"
+        tools:layout="@layout/fragment_post"/>
+
+
+</navigation>
